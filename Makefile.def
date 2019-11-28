@@ -1,0 +1,37 @@
+# -------------------------------------------------------------------------
+# choose your compiler (must be ANSI-compliant!) and linker command, plus
+# any additionally needed flags
+
+OBJDIR =
+CC = gcc
+CFLAGS = -g -O3 -fomit-frame-pointer -Wall
+LD = gcc
+LDFLAGS =
+HOST_OBJEXTENSION = .o
+
+# no cross build
+
+TARG_OBJDIR = $(OBJDIR)
+TARG_CC = $(CC)
+TARG_CFLAGS = $(CFLAGS)
+TARG_OBJEXTENSION = $(HOST_OBJEXTENSION)
+TARG_LD = $(LD)
+TARG_LDFLAGS = $(LDFLAGS)
+TARG_HOST_EXEXTENSION = $(HOST_EXEXTENSION)
+
+# -------------------------------------------------------------------------
+# directories where binaries, includes, and manpages should go during
+# installation
+
+BINDIR = $(HOME)/.local/bin
+INCDIR = $(HOME)/.local/include/asl
+MANDIR = $(HOME)/.local/man
+LIBDIR = $(HOME)/.local/lib/asl
+#DOCDIR = $(HOME)/.local/doc/asl
+
+# -------------------------------------------------------------------------
+# character encoding to use (choose one of them)
+
+CHARSET = CHARSET_ASCII7
+# CHARSET = CHARSET_IBM437
+# CHARSET = CHARSET_ISO8859_1

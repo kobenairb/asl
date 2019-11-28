@@ -107,8 +107,8 @@ include $(DOC_EN_DIR)makedefs.dok
 test: binaries
 	cd tests; OBJDIR=$(TARG_OBJDIR) RUNCMD=$(TARG_RUNCMD) ./testall "$(TESTDIRS)"
 
-install: all
-	PREFIX=$(PREFIX) OBJDIR=$(TARG_OBJDIR) ./install.sh $(BINDIR) $(INCDIR) $(MANDIR) $(LIBDIR) $(DOCDIR)
+install: binaries
+	PREFIX=$(PREFIX) OBJDIR=$(TARG_OBJDIR) ./install.sh $(BINDIR) $(INCDIR) $(MANDIR) $(LIBDIR) # $(DOCDIR)
 
 clean: clean_doc_DE clean_doc_EN
 	if test "$(HOST_OBJEXTENSION)" != ""; then $(RM) *$(HOST_OBJEXTENSION) $(OBJDIR)*$(HOST_OBJEXTENSION); fi
